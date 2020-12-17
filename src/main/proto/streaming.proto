@@ -1,0 +1,19 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.github.hundanli.grpc.streaming";
+option java_outer_classname = "StreamingProto";
+option objc_class_prefix = "HLW";
+
+service StreamService {
+  rpc sayHello(stream StreamRequest) returns (stream StreamReply) {}
+}
+
+message StreamRequest {
+  string name = 1;
+}
+
+message StreamReply {
+  string message = 1;
+}

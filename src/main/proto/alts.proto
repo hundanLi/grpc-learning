@@ -1,0 +1,25 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.github.hundanli.grpc.alts";
+option java_outer_classname = "AltsProto";
+option objc_class_prefix = "HLW";
+
+package helloworld;
+
+// The greeting service definition.
+service AltsGreeter {
+  // Sends a greeting
+  rpc sayHello (AltsRequest) returns (AltsReply) {}
+}
+
+// The request message containing the user's name.
+message AltsRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message AltsReply {
+  string message = 1;
+}
